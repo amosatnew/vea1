@@ -1,0 +1,19 @@
+[images]
+  remote_images = [
+    "https://images.unsplash.com/*/*"
+  ]
+
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[dev]
+  command = "bun run dev"
+  port = 5173
+  targetPort = 5173
+
+# Handle SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
